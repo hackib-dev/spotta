@@ -17,6 +17,7 @@ import FilterCard from "./filter-card";
 import { CreateReviewModal } from "@/components/createReviewModal";
 import { useDisclosure } from "@/hooks";
 import { ReviewFormData } from "../createReviewModal/types";
+import { useRouter } from "next/navigation";
 
 interface ReviewOnSubmitProps {
   reviewOnSubmit: (data: ReviewFormData) => void;
@@ -65,6 +66,12 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
     }
   };
 
+  const router = useRouter();
+
+  const handleLogoButton = () => {
+    router.push("/");
+  };
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const onActionCreateReview = () => {
@@ -78,7 +85,7 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
   return (
     <div className="bg-[#F2F6FD] px-5 md:px-[100px] py-2.5 fixed top-0 z-50  w-full  dark:bg-brand-dark">
       <div className="flex justify-between items-center mb-4">
-        <div className="flex">
+        <div className="flex cursor-pointer" onClick={handleLogoButton}>
           <p className="text-[10px] font-black tracking-[5px]">SPOTTA</p>
           <span>
             <NgLogo />
