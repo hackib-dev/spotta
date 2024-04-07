@@ -121,7 +121,7 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
       <DialogContent className="sm:max-w-[700px] dark:bg-brand-dark">
         <DialogHeader className="mb-6">
           <p className="font-medium text-center text-lg">Review Location</p>
-          <p className="font-medium text-xl mt-4">
+          <p className="font-medium text-[15px] md:text-xl mt-4">
             Bonny and Clyde Street, Ajao Estate, Lagos
           </p>
         </DialogHeader>
@@ -147,7 +147,7 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
                         </div>
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-full grid grid-cols-5 gap-x-4 dark:bg-brand-dark">
+                    <PopoverContent className="w-full grid grid-cols-1 md:grid-cols-5 gap-x-0 md:gap-x-4 dark:bg-brand-dark">
                       {categories.map((category) => (
                         <>
                           <FormField
@@ -158,7 +158,7 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
                               return (
                                 <FormItem
                                   key={category.id}
-                                  className="flex items-center gap-4"
+                                  className="flex items-center gap-4 w-svw md:w-full "
                                 >
                                   <FormControl>
                                     <Checkbox

@@ -76,7 +76,7 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
   };
 
   return (
-    <div className="bg-[#F2F6FD] px-[100px] py-2.5 fixed top-0 z-50  w-full  dark:bg-brand-dark">
+    <div className="bg-[#F2F6FD] px-5 md:px-[100px] py-2.5 fixed top-0 z-50  w-full  dark:bg-brand-dark">
       <div className="flex justify-between items-center mb-4">
         <div className="flex">
           <p className="text-[10px] font-black tracking-[5px]">SPOTTA</p>
@@ -84,7 +84,7 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
             <NgLogo />
           </span>
         </div>
-        <div>
+        <div className="hidden md:block">
           <Input
             type="search"
             placeholder="Enter Address"
@@ -103,7 +103,7 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
           </div>
           <div className="ml-6">
             <div className="flex font-semibold text-sm items-center">
-              <div>Welcome!</div>
+              <div className="hidden md:block">Welcome!</div>
               <div className="ml-2">
                 <ProfileImage />
               </div>
@@ -112,24 +112,35 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
+      <div className="block md:hidden">
+        <Input
+          type="search"
+          placeholder="Enter Address"
+          leftIcon={<Search height={12} />}
+          className="dark:bg-[#242428] w-ffull"
+          value={searchInput}
+          onChange={handleSearchInputChange}
+        />
+      </div>
+
+      <div className="flex flex-col md:flex-row md:justify-between items-center">
         <div>
-          <p className="text-[22px] font-medium">
+          <p className="text-lg md:text-[22px] font-medium">
             Bonny and Clyde Street, Ajao Estate, Lagos
           </p>
-          <p className="text-sm">
+          <p className="text-xs md:text-sm">
             <span className="font-medium">&quot;450&quot; Reviews </span>
             (People are raving about the selected location)
           </p>
         </div>
         {searchInput === "" && (
-          <div className="flex">
+          <div className="flex md:mt-0 mt-4">
             <Button className="dark:text-white" onClick={onActionOpenModal}>
               LEAVE A REVIEW
             </Button>
             <Button
               variant={"ghost"}
-              className="border-[1.5px] border-[#3366FF] px-4 py-3 mx-2"
+              className="border-[1.5px] border-[#3366FF] px-4 py-3 md:mx-2 mx-10"
             >
               <SaveIcon />
             </Button>
@@ -150,7 +161,10 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
         >
           <LeftIcon />
         </div>
-        <div className="flex overflow-x-auto mx-2" ref={locationListRef}>
+        <div
+          className="flex overflow-x-auto mx-2 md:pb-1 pb-3"
+          ref={locationListRef}
+        >
           {locations.map((location, index) => (
             <FilterCard key={index} text={location} />
           ))}

@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between px-[100px] py-2.5 items-center dark:bg-brand-dark fixed top-0 z-50  w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+    <div className="flex justify-between px-5 md:px-[100px] py-2.5 items-center dark:bg-brand-dark fixed top-0 z-50  w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
       <div>
         <div className="flex">
           <p className="text-[10px] font-black tracking-[5px]">SPOTTA</p>

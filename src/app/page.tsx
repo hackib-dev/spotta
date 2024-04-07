@@ -16,12 +16,12 @@ export default function Home() {
         <Header />
       </div>
 
-      <div className="px-[100px] flex h-[90vh]">
-        <div className="w-3/5 pr-[145px] my-auto">
-          <h1 className="text-6xl font-bold">
+      <div className="px-5 md:px-[100px] flex h-[90vh]">
+        <div className="w-full md:w-3/5 pr-0 md:pr-[145px] my-auto">
+          <h1 className="text-[45px] md:text-6xl font-bold">
             Find a place you will love to live!
           </h1>
-          <p className="text-[22px] my-10">
+          <p className="text-lg md:text-[22px] my-10">
             See through the lenses of people who have lived or visited the
             neighbourhood you might have in mind.
           </p>
@@ -34,7 +34,7 @@ export default function Home() {
           <Button className="mt-5 px-10 py-4 dark:text-white">Search</Button>
         </div>
 
-        <div className="w-2/5  bg-[#D1D1D1] dark:bg-brand-dark  overflow-auto">
+        <div className="w-2/5  bg-[#D1D1D1] dark:bg-brand-dark  overflow-auto hidden md:block">
           <div className="grid grid-cols-2 gap-2 p-1">
             <ReviewCard
               profileImage={<ProfileImage />}
