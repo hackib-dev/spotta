@@ -24,6 +24,7 @@ import ImageTwo from "./image2.svg";
 import ImageThree from "./image3.svg";
 import ImageFour from "./image4.svg";
 import NoReview from "./no-review.svg";
+import NgLogo from "./ng.svg";
 
 export {
   SpottaLogo,
@@ -52,4 +53,5 @@ export {
   ImageThree,
   ImageFour,
   NoReview,
+  NgLogo,
 };

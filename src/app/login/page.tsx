@@ -21,6 +21,7 @@ import SocialButton from "@/components/ui/SocialButton/page";
 import { Apple, Facebook, Google } from "../../../public";
 import { LoginFormSchema } from "./validation";
 import { useRouter } from "next/navigation";
+import { FaApple, FaFacebook, FaFacebookF } from "react-icons/fa";
 
 const Login = () => {
   const form = useForm<z.infer<typeof LoginFormSchema>>({
@@ -106,8 +107,14 @@ const Login = () => {
                   LOG IN
                 </Button>
                 <SocialButton icon={<Google />} text="Login with Google" />
-                <SocialButton icon={<Facebook />} text="Login with Facebook" />
-                <SocialButton icon={<Apple />} text="Login with Apple" />
+                <SocialButton
+                  icon={<FaFacebook className="w-7 h-7 text-[#3366FF]" />}
+                  text="Login with Facebook"
+                />
+                <SocialButton
+                  icon={<FaApple className="w-7 h-7" />}
+                  text="Login with Apple"
+                />
                 <div className="text-center text-sm">
                   <p className="mb-4 underline cursor-pointer">
                     Forgot your password?

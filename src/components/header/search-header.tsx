@@ -6,6 +6,7 @@ import {
   ShareIcon,
   LeftIcon,
   RightIcon,
+  NgLogo,
 } from "../../../public";
 import { ModeToggler } from "../mode-toggler";
 import { ProfileImage } from "../../../public";
@@ -77,8 +78,11 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
   return (
     <div className="bg-[#F2F6FD] px-[100px] py-2.5 fixed top-0 z-50  w-full  dark:bg-brand-dark">
       <div className="flex justify-between items-center mb-4">
-        <div>
-          {selectedTheme === "light" ? <SpottaLogo /> : <SpottaDarkLogo />}
+        <div className="flex">
+          <p className="text-[10px] font-black tracking-[5px]">SPOTTA</p>
+          <span>
+            <NgLogo />
+          </span>
         </div>
         <div>
           <Input

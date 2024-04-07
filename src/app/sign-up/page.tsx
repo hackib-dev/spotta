@@ -21,6 +21,7 @@ import SocialButton from "@/components/ui/SocialButton/page";
 import { Apple, Facebook, Google } from "../../../public";
 import { SignUpFormSchema } from "./validation";
 import { useRouter } from "next/navigation";
+import { FaApple, FaFacebook } from "react-icons/fa";
 
 const SignUp = () => {
   const form = useForm<z.infer<typeof SignUpFormSchema>>({
@@ -175,10 +176,13 @@ const SignUp = () => {
                 </Button>
                 <SocialButton icon={<Google />} text="Sign Up with Google" />
                 <SocialButton
-                  icon={<Facebook />}
-                  text="Sign Up with Facebook"
+                  icon={<FaFacebook className="w-7 h-7 text-[#3366FF]" />}
+                  text="Login with Facebook"
                 />
-                <SocialButton icon={<Apple />} text="Sign Up with Apple" />
+                <SocialButton
+                  icon={<FaApple className="w-7 h-7" />}
+                  text="Login with Apple"
+                />
                 <div className="text-center text-sm">
                   <p>
                     Already have an account?{" "}
