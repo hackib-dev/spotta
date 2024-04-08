@@ -132,7 +132,7 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
 
       <div className="flex flex-col md:flex-row md:justify-between items-center">
         <div>
-          <p className="text-lg md:text-[22px] font-medium">
+          <p className="text-base md:text-[22px] font-medium mt-2 md:mt-0">
             Bonny and Clyde Street, Ajao Estate, Lagos
           </p>
           <p className="text-xs md:text-sm">
@@ -164,12 +164,12 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
       <div className="flex items-center mt-4">
         <div
           onClick={scrollLeft}
-          className="bg-white rounded-full px-[9px] py-1.5 cursor-pointer"
+          className="bg-white rounded-full px-[9px] py-1.5 cursor-pointer hidden md:block"
         >
           <LeftIcon />
         </div>
         <div
-          className="flex overflow-x-auto mx-2 md:pb-1 pb-3"
+          className="flex overflow-x-auto gap-4 mx-2 md:pb-1 pb-3"
           ref={locationListRef}
         >
           {locations.map((location, index) => (
@@ -178,7 +178,7 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
         </div>
         <div
           onClick={scrollRight}
-          className="bg-white rounded-full px-[9px] py-1.5 cursor-pointer"
+          className="bg-white rounded-full px-[9px] py-1.5 cursor-pointer md:mb-0 mb-4"
         >
           <RightIcon />
         </div>

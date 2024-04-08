@@ -118,7 +118,7 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[700px] dark:bg-brand-dark">
+      <DialogContent className=" max-w-[370px] md:max-w-[700px] dark:bg-brand-dark">
         <DialogHeader className="mb-6">
           <p className="font-medium text-center text-lg">Review Location</p>
           <p className="font-medium text-[15px] md:text-xl mt-4">
@@ -147,47 +147,41 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
                         </div>
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-full grid grid-cols-1 md:grid-cols-5 gap-x-0 md:gap-x-4 dark:bg-brand-dark">
+                    <PopoverContent className="w-[315px] md:w-full max-h-[250px] md:max-h-[400px] overflow-y-auto grid grid-cols-1 md:grid-cols-5 gap-x-0 md:gap-x-4 dark:bg-brand-dark rounded-lg">
                       {categories.map((category) => (
-                        <>
-                          <FormField
-                            key={category.id}
-                            control={form.control}
-                            name="items"
-                            render={({ field }) => {
-                              return (
-                                <FormItem
-                                  key={category.id}
-                                  className="flex items-center gap-4 w-svw md:w-full "
-                                >
-                                  <FormControl>
-                                    <Checkbox
-                                      className="mt-2"
-                                      checked={field.value?.includes(
-                                        category.id
-                                      )}
-                                      onCheckedChange={(checked) => {
-                                        return checked
-                                          ? field.onChange([
-                                              ...field.value,
-                                              category.id,
-                                            ])
-                                          : field.onChange(
-                                              field.value?.filter(
-                                                (value) => value !== category.id
-                                              )
-                                            );
-                                      }}
-                                    />
-                                  </FormControl>
-                                  <FormLabel className="font-normal ">
-                                    {category.name}
-                                  </FormLabel>
-                                </FormItem>
-                              );
-                            }}
-                          />
-                        </>
+                        <FormField
+                          key={category.id}
+                          control={form.control}
+                          name="items"
+                          render={({ field }) => (
+                            <FormItem
+                              key={category.id}
+                              className="flex items-center gap-4 w-svw md:w-full"
+                            >
+                              <FormControl>
+                                <Checkbox
+                                  className="mt-2"
+                                  checked={field.value?.includes(category.id)}
+                                  onCheckedChange={(checked) => {
+                                    checked
+                                      ? field.onChange([
+                                          ...field.value,
+                                          category.id,
+                                        ])
+                                      : field.onChange(
+                                          field.value?.filter(
+                                            (value) => value !== category.id
+                                          )
+                                        );
+                                  }}
+                                />
+                              </FormControl>
+                              <FormLabel className="font-normal">
+                                {category.name}
+                              </FormLabel>
+                            </FormItem>
+                          )}
+                        />
                       ))}
                     </PopoverContent>
                   </Popover>
