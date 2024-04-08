@@ -74,7 +74,7 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
     }),
     anonymous: z.boolean().default(false).optional(),
     review: z.string().min(10, {
-      message: "Bio must be at least 10 characters.",
+      message: "Review must be at least 10 characters.",
     }),
   });
 
