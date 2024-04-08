@@ -132,7 +132,7 @@ const SearchHeader = ({ reviewOnSubmit }: ReviewOnSubmitProps) => {
 
       <div className="flex flex-col md:flex-row md:justify-between items-center">
         <div>
-          <p className="text-base md:text-[22px] font-medium mt-2 md:mt-0">
+          <p className="text-base md:text-[22px] font-medium mt-4 md:mt-0">
             Bonny and Clyde Street, Ajao Estate, Lagos
           </p>
           <p className="text-xs md:text-sm">

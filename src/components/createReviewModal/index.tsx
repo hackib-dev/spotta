@@ -147,7 +147,10 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
                         </div>
                       </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-[315px] md:w-full max-h-[250px] md:max-h-[400px] overflow-y-auto grid grid-cols-1 md:grid-cols-5 gap-x-0 md:gap-x-4 dark:bg-brand-dark rounded-lg">
+                    <PopoverContent
+                      className="w-[315px] md:w-full max-h-[280px] md:max-h-[400px] overflow-y-scroll grid grid-cols-1 md:grid-cols-5 gap-x-0 md:gap-x-4 dark:bg-brand-dark rounded-lg"
+                      style={{ WebkitOverflowScrolling: "touch" }}
+                    >
                       {categories.map((category) => (
                         <FormField
                           key={category.id}
