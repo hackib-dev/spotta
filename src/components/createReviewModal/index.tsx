@@ -29,7 +29,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { toast } from "@/components/ui/use-toast";
-import StarRating from "../ui/star-rating";
+// import StarRating from "../ui/star-rating";
+import StarRating from "../ui/starRating";
 import { Textarea } from "@/components/ui/textarea";
 
 export const CreateReviewModal: FC<CreateReviewModalProps> = ({
@@ -194,10 +195,15 @@ export const CreateReviewModal: FC<CreateReviewModalProps> = ({
             />
             <div>
               <p className="text-sm font-medium mb-3">Rate location</p>
-              <StarRating
+              {/* <StarRating
                 totalStars={5}
                 handleStarClick={handleStarChange}
                 selectedStars={selectedStars}
+              /> */}
+              <StarRating
+                maxRating={5}
+                size={20}
+                onSetRating={handleStarChange}
               />
             </div>
             <div>
